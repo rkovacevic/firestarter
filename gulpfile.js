@@ -125,3 +125,4 @@ gulp.task('watch', function() {
 
 // The default task (called when you run `gulp`)
 gulp.task('default', ['clean', 'scripts', 'bower', 'vendor-scripts', 'styles', 'templates', 'assets', 'lr-server', 'watch', 'server']);
+gulp.task('heroku:production', ['clean', 'scripts', 'bower', 'vendor-scripts', 'styles', 'templates', 'assets']);

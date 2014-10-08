@@ -52,9 +52,7 @@
     "tiny-lr": "^0.0.7",
     "gulp-changed": "^0.3.0",
     "gulp-ng-annotate": "^0.3.0",
-    "gulp-rimraf": "^0.1.0"
-  },
-  "devDependencies": {
+    "gulp-rimraf": "^0.1.0",
     "gulp-if": "^1.2.5",
     "gulp-install": "^0.2.0",
     "gulp-nodemon": "^1.0.4",
@@ -63,6 +61,9 @@
     "nodemon": "latest",
     "should": "latest",
     "supertest": "latest"
+  },
+  "devDependencies": {
+    
   },
   "repository": {
     "type": "git",
