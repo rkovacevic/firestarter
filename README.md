@@ -1,5 +1,7 @@
 ## Node + Express + Mongoose + AngularJS + Gulp Twitter clone demo app 
 
+[![Build Status](https://travis-ci.org/rkovacevic/firestarter.svg?branch=master)](https://travis-ci.org/rkovacevic/firestarter) 
+
 Demo: http://rkovacevic-firestarter.herokuapp.com/
 
 Blog post: http://rkovacevic.github.io/articles/firestarter/
