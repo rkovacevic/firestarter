@@ -4,6 +4,8 @@ Demo
 
 http://rkovacevic-firestarter.herokuapp.com/
 
+Blog post: http://rkovacevic.github.io/articles/firestarter/
+
 ## Installation and Usage
     
     $ git clone https://github.com/rkovacevic/firestarter.git
