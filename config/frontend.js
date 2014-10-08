@@ -3,6 +3,7 @@ var path = require('path');
 
 module.exports = function(app) {
 
+    console.log('Configuring frontend routes ' + __dirname);
     app.use('/js', express.static(__dirname + '/../dist/js'));
     app.use('/views', express.static(__dirname + '/../dist/views'));
     app.use('/css', express.static(__dirname + '/../dist/css'));
