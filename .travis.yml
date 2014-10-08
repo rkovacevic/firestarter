@@ -4,6 +4,7 @@ language: node_js
 node_js:
 - '0.11'
 - '0.10'
+env: DB_URL=mongodb://127.0.0.1/test
 deploy:
   provider: heroku
   api_key:
