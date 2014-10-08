@@ -10,7 +10,8 @@
 ## Deploying to Heroku
 
 	$ heroku apps:create <APP_NAME>
-	$ heroku config:set BUILDPACK_URL=https://github.com/appstack/heroku-buildpack-nodejs-gulp.git
+	$ heroku config:set NODE_ENV=production
+	$ heroku config:set BUILDPACK_URL=https://github.com/davidmfoley/heroku-buildpack-nodejs-gulp-bower.git
 	$ heroku config:set DB_URL=mongodb://<USERNAME>:<PASSWORD>@<SERVER>:<PORT>/<DATABASE>
 	$ git push heroku master
 

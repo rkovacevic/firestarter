@@ -136,7 +136,7 @@ gulp.task('default',
 gulp.task('heroku:production', 
     function(callback) {
         runSequence('clean',
-            ['scripts', 'bower', 'templates', 'assets'],
+            ['scripts', 'templates', 'assets'],
             ['vendor-scripts', 'styles'],
             callback);
     });
