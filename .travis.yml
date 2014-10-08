@@ -1,0 +1,13 @@
+services:
+- mongodb
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+deploy:
+  provider: heroku
+  api_key:
+    secure: dYFfznGCR9q0Y1Ght7Nm3u+WeQ1nF+PCCw0CLhXz0qtt0dXxmcXQpgDCRRt9xxeqMC1oZppxdCtPwb54k4e5MT6eIhOdhr58v9eD12kRvpyvW11Hr8NgIbtUyU0TRGmyUbDcxlJJJz0Wky6ZaE1KBagQ/pq58oBoUUqJF6eGKU0=
+  app: rkovacevic-firestarter
+  on:
+    repo: rkovacevic/firestarter
