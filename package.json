@@ -60,6 +60,7 @@
     "mocha": "latest",
     "nodemon": "latest",
     "should": "latest",
+    "run-sequence": "1.0.1",
     "supertest": "latest"
   },
   "devDependencies": {

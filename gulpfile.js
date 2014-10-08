@@ -19,6 +19,7 @@ var gulp = require('gulp'),
     nodemon = require('gulp-nodemon'),
     minimist = require('minimist'),
     gulpif = require('gulp-if'),
+    runSequence = require('run-sequence'),
     lr = require('tiny-lr')();
 
 var knownOptions = {
@@ -124,5 +125,18 @@ gulp.task('watch', function() {
 
 
 // The default task (called when you run `gulp`)
-gulp.task('default', ['clean', 'scripts', 'bower', 'vendor-scripts', 'styles', 'templates', 'assets', 'lr-server', 'watch', 'server']);
-gulp.task('heroku:production', ['clean', 'scripts', 'bower', 'vendor-scripts', 'styles', 'templates', 'assets']);
+gulp.task('default', 
+    function(callback) {
+        runSequence('clean',
+            ['scripts', 'bower', 'templates', 'assets'],
+            ['vendor-scripts', 'styles'],
+            ['lr-server', 'watch', 'server'],
+            callback);
+    });
+gulp.task('heroku:production', 
+    function(callback) {
+        runSequence('clean',
+            ['scripts', 'bower', 'templates', 'assets'],
+            ['vendor-scripts', 'styles'],
+            callback);
+    });
