@@ -1,0 +1,75 @@
+{
+  "name": "firestarter",
+  "description": "Node + Express + Mongoose + AngularJS + Gulp app template",
+  "version": "0.0.1",
+  "author": {
+    "name": "Robert Kovacevic",
+    "email": "robert.kovacevic1@gmail.com"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "start": "NODE_PATH=./config:./app/controllers NODE_ENV=development ./node_modules/.bin/nodemon server.js",
+    "test": "make test"
+  },
+  "dependencies": {
+    "async": "latest",
+    "body-parser": "^1.8.2",
+    "compression": "^1.1.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^0.4.1",
+    "cookie-parser": "^1.3.3",
+    "cookie-session": "^1.0.2",
+    "csurf": "^1.6.1",
+    "express": "^4.9.3",
+    "express-session": "^1.8.2",
+    "forever": "^0.11.1",
+    "method-override": "^2.2.0",
+    "mongoose": "^3.9.2",
+    "mongoose-user": "0.0.1",
+    "morgan": "^1.3.1",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "view-helpers": "^0.1.5",
+    "winston": "^0.8.0",
+    "bower": "^1.3.12",
+    "event-stream": "^3.1.5",
+    "gulp": "^3.8.8",
+    "gulp-concat": "^2.2.0",
+    "gulp-csso": "^0.2.8",
+    "gulp-embedlr": "^0.5.2",
+    "gulp-jade": "^0.5.0",
+    "gulp-jshint": "^1.6.1",
+    "gulp-less": "^1.2.3",
+    "gulp-livereload": "^1.5.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.0",
+    "gulp-concat-vendor": "https://github.com/rkovacevic/gulp-concat-vendor/tarball/6f44cbf8018df4207feaf6b616ca90cc8da7ef1a",
+    "gulp-minify-css": "^0.3.7",
+    "gulp-util": "^2.2.14",
+    "jshint-stylish": "^0.2.0",
+    "tiny-lr": "^0.0.7",
+    "gulp-changed": "^0.3.0",
+    "gulp-ng-annotate": "^0.3.0",
+    "gulp-rimraf": "^0.1.0"
+  },
+  "devDependencies": {
+    "gulp-if": "^1.2.5",
+    "gulp-install": "^0.2.0",
+    "gulp-nodemon": "^1.0.4",
+    "minimist": "^1.1.0",
+    "mocha": "latest",
+    "nodemon": "latest",
+    "should": "latest",
+    "supertest": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rkovacevic/firestarter.git"
+  },
+  "keywords": [
+    "mvc",
+    "boilerplate"
+  ]
+}

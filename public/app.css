@@ -1,0 +1,11 @@
+body {
+  padding-top: 50px;
+}
+
+.page-contents {
+  padding: 20px 15px;
+}
+
+.notify-message {
+	position: fixed; bottom: 25px; right: 25px;
+}

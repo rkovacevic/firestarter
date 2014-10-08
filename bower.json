@@ -1,0 +1,30 @@
+{
+  "name": "firestarter",
+  "version": "0.0.1",
+  "description": "Node + Express + Mongoose + AngularJS + Gulp app template",
+  "authors": [
+    "Robert Kovacevic"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rkovacevic/firestarter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "bootswatch-dist": "3.2.0-yeti",
+    "lodash": "~2.4.1",
+    "angular-bootstrap": "~0.11.2",
+    "angular-growl-v2": "~0.7.0",
+    "restangular": "1.4.0",
+    "angular-moment": "~0.8.2"
+  },
+  "private": true
+}

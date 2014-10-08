@@ -1,0 +1,12 @@
+<div>
+	<div ng-show="loading">
+		<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<div ng-hide="loading">
+		<ng-include src="'/views/home/loggedIn.html'" ng-show="user"></ng-include>
+		<ng-include src="'/views/home/loggedOut.html'" ng-hide="user"></ng-include>
+	</div>
+</div>

@@ -1,0 +1,58 @@
+.rk-spinner {
+  padding-left: 5px;
+  display: inline-block;
+  opacity: 0;
+  max-width: 0;
+
+  -webkit-transition: opacity 0.25s, max-width 0.45s; 
+  -moz-transition: opacity 0.25s, max-width 0.45s;
+  -o-transition: opacity 0.25s, max-width 0.45s;
+  transition: opacity 0.25s, max-width 0.45s; /* Duration fixed since we animate additional hidden width */
+}
+
+.rk-has-spinner.active {
+  cursor:progress;
+}
+
+.rk-has-spinner.active .rk-spinner {
+  opacity: 1;
+  max-width: 50px; /* More than it will ever come, notice that this affects on animation duration */
+}
+
+.rk-spin {
+     -webkit-transform-origin: 50% 58%;
+     transform-origin:50% 58%;
+     -ms-transform-origin:50% 58%; /* IE 9 */
+     -webkit-animation: rk-spin 1s infinite linear;
+     -moz-animation: rk-spin 1s infinite linear;
+     -o-animation: rk-spin 1s infinite linear;
+     animation: rk-spin 1s infinite linear;
+}
+
+
+@-moz-keyframes rk-spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rk-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rk-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

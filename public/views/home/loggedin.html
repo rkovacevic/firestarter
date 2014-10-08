@@ -1,0 +1,49 @@
+<div class="row" ng-controller="MainCtrl">
+	<div class="col-md-3">
+		<span class="glyphicon glyphicon-user user-avatar text-success text-center"></span>
+	<h3>{{user.name}}</h3>
+	<h4>Subscriptions</h4>
+		<hr/>
+		<div class="user-box" ng-repeat="subscription in user.subscriptions">
+			{{subscription.name}}
+			<button type="button" ng-click="unsubscribe(subscription)" class="btn btn-xs btn-warning pull-right">Unubscribe</button>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<form name="postForm" ng-class="form-horizontal" novalidate rc-submit="post()" >
+			<div class="form-group" ng-class="{ 'has-error' : rc.postForm.needsAttention(postForm.postText) }">
+				<input type="text" name="postText" placeholder="What's going on?" ng-model="postText" required class="form-control" tabindex="1"></input>
+				<label class="control-label" ng-show="rc.postForm.needsAttention(postForm.postText)">
+					<span ng-show="postForm.postText.$error.required">Tell us how you feel</span>
+					<span ng-show="postForm.postText.$error.$serverError">{{postForm.postText.$error.$serverError}}</span>
+				</label>
+			</div>
+			<div class="form-group text-right">
+				<button type="submit" class="btn btn-primary" spinner="postForm.$submitting" tabindex="2">Post</button>
+			</div>
+		</form>
+		<hr/>
+		<div ng-hide="posts != null" class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+		<div ng-show="posts" ng-repeat="post in posts">
+			<p class="text-muted small"><em>{{post.postedDate | amCalendar}}</em></p>
+			<p>{{post.text}}</p>
+			<p class="text-muted text-right"><em>
+				<span ng-class="{'label label-success': post.author._id == user._id}">
+					{{post.author.name}}
+				</span>
+			</em></p>
+			<hr/>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<h4>Suggested users</h4>
+		<hr/>
+		<div class="user-box" ng-repeat="suggestedUser in suggestedUsers">
+			{{suggestedUser.name}}
+			<button type="button" ng-click="subscribe(suggestedUser)" class="btn btn-xs btn-info pull-right">Subscribe</button>
+		</div>
+	</div>
+</div>

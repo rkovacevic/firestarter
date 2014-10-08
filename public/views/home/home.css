@@ -1,0 +1,14 @@
+#user-action-tabs .tab-content {
+	background-color: white;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-top: 0px;
+}
+
+.user-avatar {
+	font-size: 100px;
+}
+
+.user-box {
+	margin-bottom: 10px;
+}

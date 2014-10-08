@@ -1,0 +1,86 @@
+<div class="row">
+	<div class="col-md-8">
+		<div class="jumbotron">
+			<h1>Hello world</h1>
+			<p>Twitter clone demo app with Node + AngularJS</p>
+			<p>
+				<a class="btn btn-primary btn-lg" role="button" ng-href="/about">Learn more</a>
+				<a class="btn btn-success btn-lg" role="button" ng-href="http://github.com/rkovacevic/firestarter">View Source</a>
+			</p>
+		</div>
+	</div>
+	<div id="user-action-tabs" class="col-md-4">
+		<tabset>
+			<tab heading="Login">
+				<form name="loginForm" ng-class="form-horizontal" novalidate rc-submit="login()" ng-hide="showForgot">
+					<div class="form-group" ng-class="{ 'has-error' : rc.loginForm.needsAttention(loginForm.email) }">
+						<input ng-model="loginUser.email" required server-validated name="email" type="text" class="form-control" placeholder="Email" tabindex="1">
+						<label class="control-label" ng-show="rc.loginForm.needsAttention(loginForm.email)">
+							<span ng-show="loginForm.email.$error.required">Required</span>
+							<span ng-show="loginForm.email.$error.$serverError">{{loginForm.email.$error.$serverError}}</span>
+						</label>
+					</div>
+					<div class="form-group" ng-class="{ 'has-error' : rc.loginForm.needsAttention(loginForm.password) }">
+						<input ng-model="loginUser.password" required server-validated name="password" type="password" class="form-control" placeholder="Password" tabindex="1">
+						<label class="control-label" ng-show="rc.loginForm.needsAttention(loginForm.password)">
+							<span ng-show="loginForm.password.$error.required">Required</span>
+							<span ng-show="loginForm.password.$error.$serverError">{{loginForm.password.$error.$serverError}}</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input ng-model="loginUser.rememberMe" type="checkbox" tabindex="3"> Remember me
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary" spinner="loginForm.$submitting" tabindex="4">Submit</button>
+					<a href="#" class="pull-right" ng-click="showForgot = true">Forgot your password?</a>
+				</form>
+				<form name="forgotForm" ng-class="form-horizontal" novalidate rc-submit="sendNewPassword()" ng-show="showForgot">
+					<div class="form-group" ng-class="{ 'has-error' : rc.forgotForm.needsAttention(forgotForm.email) }">
+						<input ng-model="forgotEmail" required server-validated name="email" type="text" class="form-control" placeholder="Email" tabindex="1">
+						<label class="control-label" ng-show="rc.forgotForm.needsAttention(forgotForm.email)">
+							<span ng-show="forgotForm.email.$error.required">Required</span>
+							<span ng-show="forgotForm.email.$error.$serverError">{{forgotForm.email.$error.$serverError}}</span>
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary" spinner="forgotForm.$submitting" tabindex="4">Send new password</button>
+					<button type="button" class="btn" tabindex="5" ng-click="showForgot = false">Cancel</button>
+				</form>
+			</tab>
+			<tab heading="Register">
+				<form name="registerForm" ng-class="form-horizontal" novalidate rc-submit="register()">
+					<div class="form-group" ng-class="{ 'has-error' : rc.registerForm.needsAttention(registerForm.name) }">
+						<input ng-model="registerUser.name" required server-validated name="name" type="text" class="form-control" placeholder="name" tabindex="1">
+						<label class="control-label" ng-show="rc.registerForm.needsAttention(registerForm.name)">
+							<span ng-show="registerForm.name.$error.required">Required</span>
+							<span ng-show="registerForm.name.$error.$serverError">{{registerForm.name.$error.$serverError}}</span>
+						</label>
+					</div>
+					<div class="form-group" ng-class="{ 'has-error' : rc.registerForm.needsAttention(registerForm.email) }">
+						<input ng-model="registerUser.email" required server-validated name="email" type="email" class="form-control" placeholder="Email" tabindex="1">
+						<label class="control-label" ng-show="rc.registerForm.needsAttention(registerForm.email)">
+							<span ng-show="registerForm.email.$error.required">Required</span>
+							<span ng-show="registerForm.email.$error.email">Enter valid email address</span>
+							<span ng-show="registerForm.email.$error.$serverError">{{registerForm.email.$error.$serverError}}</span>
+						</label>
+					</div>
+					<div class="form-group" ng-class="{ 'has-error' : rc.registerForm.needsAttention(registerForm.password) }">
+						<input ng-model="registerUser.password" required server-validated name="password" type="password" class="form-control" placeholder="Password" tabindex="1">
+						<label class="control-label" ng-show="rc.registerForm.needsAttention(registerForm.password)">
+							<span ng-show="registerForm.password.$error.required">Required</span>
+							<span ng-show="registerForm.password.$error.$serverError">{{registerForm.password.$error.$serverError}}</span>
+						</label>
+					</div>
+					<div class="form-group" ng-class="{ 'has-error' : rc.registerForm.needsAttention(registerForm.repeatPassword) }">
+						<input ng-model="registerUser.repeatPassword" required server-validated name="repeatPassword" type="password" class="form-control" placeholder="Repeat password" tabindex="1">
+						<label class="control-label" ng-show="rc.registerForm.needsAttention(registerForm.repeatPassword)">
+							<span ng-show="registerForm.repeatPassword.$error.required">Required</span>
+							<span ng-show="registerForm.repeatPassword.$error.$serverError">{{registerForm.repeatPassword.$error.$serverError}}</span>
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary" spinner="registerForm.$submitting" tabindex="4">Submit</button>
+				</form>
+			</tab>
+		</tabset>
+	</div>
+</div>
