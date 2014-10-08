@@ -26,13 +26,13 @@ config(function($routeProvider, $locationProvider, growlProvider, RestangularPro
     });
 }).
 run(function($rootScope, $location, Users) {
-    $rootScope.isCurrentView = function(viewName) {
-        var currentLocation = $location.path();
-        if (viewName.length === 0 && currentLocation.length != 1) return false;
-        return _(currentLocation).startsWith('/' + viewName).value();
-    };
+    // $rootScope.isCurrentView = function(viewName) {
+    //     var currentLocation = $location.path();
+    //     if (viewName.length === 0 && currentLocation.length != 1) return false;
+    //     return _(currentLocation).startsWith('/' + viewName).value();
+    // };
 
-    $rootScope.loading = true;
+    // $rootScope.loading = true;
 
     Users.getUser().then(function (user) {
         $rootScope.user = user;
