@@ -1,8 +1,6 @@
 ## Node + Express + Mongoose + AngularJS + Gulp Twitter clone demo app 
 
-Demo
-
-http://rkovacevic-firestarter.herokuapp.com/
+Demo: http://rkovacevic-firestarter.herokuapp.com/
 
 Blog post: http://rkovacevic.github.io/articles/firestarter/
 
