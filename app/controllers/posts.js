@@ -7,7 +7,11 @@ var Post = mongoose.model('Post');
 module.exports = function(app, passport) {
 
     app.get('/api/posts', auth.loggedIn, function(req, res, next) {
-        Post.find({})
+        var query = Post.find({});
+
+        if (req.query.toDate) query = query.where('postedDate').lt(req.query.toDate);
+
+        query
         .where('author').in(req.user.subscriptions.concat([req.user._id]))
         .limit(10)
         .sort('-postedDate')
